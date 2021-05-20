@@ -3,8 +3,12 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const dotenv = require('dotenv')
+const connectDB = require('./config/db')
 
 // Initializations
+dotenv.config({ path: './src/config/config.env' })
+connectDB()
 const app = express();
 
 // Settings
