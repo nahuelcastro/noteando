@@ -8,7 +8,7 @@ const connectDB = require('./config/db')
 
 // Initializations
 dotenv.config({ path: './src/config/config.env' })
-connectDB()
+connectDB();
 const app = express();
 
 // Settings
