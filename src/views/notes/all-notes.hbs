@@ -1,12 +1,21 @@
 <div class="row">
     {{#each notes}}
-    console.log(notes);
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{{title}}</h4>
-                    <p>{{description}}</p> 
+                    <h4 class="card-title d-flex justify-content-between align-items-center">
+                        {{title}} <a href="/notes/edit/{{_id}}"><i><span class="fas fa-edit"></span></i></a>
+                    </h4>
+                    <p>{{description}}</p>
+                    <button class="btn btn-danger btn-block btn-sm">Delete</button>
                 </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <p class="lead">There are no notes yet.</p>
+                <a href="/notes/add" class ="btn btn-success btn-block">Create One!</a>
             </div>
         </div>
     {{/each}}
