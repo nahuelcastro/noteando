@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const dotenv = require('dotenv')
 const connectDB = require('./config/db')
+const flash = require('connect-flash');
 
 // Initializations
 dotenv.config({ path: './src/config/config.env' })
@@ -21,6 +22,8 @@ app.engine('.hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
+
+// Middlewares
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
@@ -28,10 +31,16 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+app.use(flash());
 
-// Middlewares
 
 // Global Variables
+app.use(((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next()
+}));
+
 
 // Routes
 app.use(require('./routes/index'));

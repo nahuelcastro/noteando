@@ -4,3 +4,14 @@
     background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
  }
+
+ /*.jumbotron {*/
+ /*    padding: 4rem 2rem;*/
+ /*    margin-bottom: 2rem;*/
+ /*    background-color: var(--bs-light);*/
+ /*    border-radius: .3rem;*/
+ /*}*/
+
+ button.btn-close{
+     margin-right: 0;
+ }
