@@ -1,8 +1,9 @@
  body{
-    background: #232526;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    /*background: #232526;  !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to right, #414345, #232526);  !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to right, #414345, #232526); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+     background: white;
+     /*background: #50555A;*/
  }
 
  /*.jumbotron {*/
@@ -14,4 +15,22 @@
 
  button.btn-close{
      margin-right: 0;
+ }
+
+ .footer {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     padding: 1rem;
+     background-color: #efefef;
+     text-align: center;
+ }
+ /* Sticky Footer Styling */
+ body{
+     min-height: 100vh;
+ }
+ .sticky-footer{
+     position: sticky;
+     top: 100%;
  }
