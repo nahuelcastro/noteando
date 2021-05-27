@@ -17,16 +17,9 @@
      margin-right: 0;
  }
 
- .footer {
-     position: absolute;
-     right: 0;
-     bottom: 0;
-     left: 0;
-     padding: 1rem;
-     background-color: #efefef;
-     text-align: center;
- }
- /* Sticky Footer Styling */
+ .btn-circle {border-radius: 50%;}
+
+
  body{
      min-height: 100vh;
  }
