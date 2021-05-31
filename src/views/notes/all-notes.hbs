@@ -6,11 +6,11 @@
                 <div class="card-body">
                     <h4 class="card-title  justify-content-between">
                         {{title}}
-                        <a href="/notes/edit/{{_id}}" style="float: right;"><i><span class="bi bi-pencil-square"></span></i></a>
+                        <a href="/notes/edit/{{_id}}" class="a-right"><i><span class="bi bi-pencil-square"></span></i></a>
                         {{#if pinned}}
-                            <a href="/notes/edit/nopin/{{_id}}" style="float: right; margin-right: 4px" ><i><span class="bi bi-pin-fill"></span></i></a>
+                            <a href="/notes/edit/nopin/{{_id}}" class="a-pinned a-right"><i><span class="bi bi-pin-fill"></span></i></a>
                         {{else}}
-                            <a href="/notes/edit/pin/{{_id}}" style="float: right; margin-right: 4px"><i><span class="bi bi-pin"></span></i></a>
+                            <a href="/notes/edit/pin/{{_id}}" class=" a-pinned a-right"><i><span class="bi bi-pin"></span></i></a>
                         {{/if}}
 
                     </h4>
@@ -23,13 +23,6 @@
                         <button class="btn btn-danger btn-block btn-sm" type="submit">Delete</button>
                     </form>
                 </div>
-            </div>
-        </div>
-    {{else}}
-        <div class="card mx-auto">
-            <div class="card-body">
-                <p class="lead">There are no notes yet.</p>
-                <a href="/notes/add" class ="btn btn-success btn-block">Create One!</a>
             </div>
         </div>
     {{/each}}
@@ -63,14 +56,18 @@
                 </div>
             </div>
         </div>
-        {{else}}
+    {{/each}}
+
+    {{#if empty}}
         <div class="card mx-auto">
             <div class="card-body">
                 <p class="lead">There are no notes yet.</p>
                 <a href="/notes/add" class ="btn btn-success btn-block">Create One!</a>
             </div>
         </div>
-    {{/each}}
+    {{/if}}
+
+
 </div>
 <div class="row p-2">
     <div class="col-md-1 ml-auto">

@@ -33,3 +33,12 @@
      color: blue;
      font-family: monospace;
  }
+
+ .a-right{
+     float: right;
+ }
+
+ .a-pinned{
+     margin-right: 4px
+ }
+
