@@ -70,7 +70,7 @@ router.delete('/notes/delete/:id', isAuthenticated, async (req, res) => {
 router.get('/notes', isAuthenticated,  async (req, res) => {
     const notes_pinned = await Note.find({user: req.user.id}).find({pinned: true}).sort({date: 'desc'}).lean();
     const notes = await Note.find({user: req.user.id}).find({pinned: false}).sort({date: 'desc'}).lean();
-    const empty = !(notes.empty === [] || notes_pinned.empty === [])
+    const empty = !(notes.empty === [] && notes_pinned.empty === [])
     console.log(empty)
     res.render('notes/all-notes', {notes_pinned, notes, empty});
 });
