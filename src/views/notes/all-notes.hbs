@@ -1,12 +1,61 @@
 <div class="row">
+
+    {{#each notes_pinned}}
+        <div class="col-md-3">
+            <div class="card m-2">
+                <div class="card-body">
+                    <h4 class="card-title  justify-content-between">
+                        {{title}}
+                        <a href="/notes/edit/{{_id}}" style="float: right;"><i><span class="bi bi-pencil-square"></span></i></a>
+                        {{#if pinned}}
+                            <a href="/notes/edit/nopin/{{_id}}" style="float: right; margin-right: 4px" ><i><span class="bi bi-pin-fill"></span></i></a>
+                        {{else}}
+                            <a href="/notes/edit/pin/{{_id}}" style="float: right; margin-right: 4px"><i><span class="bi bi-pin"></span></i></a>
+                        {{/if}}
+
+                    </h4>
+                    <p>{{description}}</p>
+                    <div class="tag">
+                        <p>{{tag}}</p>
+                    </div>
+                    <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
+                        <input type="hidden" value="DELETE" name="_method">
+                        <button class="btn btn-danger btn-block btn-sm" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <div class="card mx-auto">
+            <div class="card-body">
+                <p class="lead">There are no notes yet.</p>
+                <a href="/notes/add" class ="btn btn-success btn-block">Create One!</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
+
+<br>
+
+<div class="row">
     {{#each notes}}
         <div class="col-md-3">
             <div class="card m-2">
                 <div class="card-body">
-                    <h4 class="card-title d-flex justify-content-between align-items-center">
-                        {{title}} <a href="/notes/edit/{{_id}}"><i><span class="fas fa-edit"></span></i></a>
+                    <h4 class="card-title  justify-content-between">
+                        {{title}}
+                        <a href="/notes/edit/{{_id}}" style="float: right;"><i><span class="bi bi-pencil-square"></span></i></a>
+                            {{#if pinned}}
+                                <a href="/notes/edit/nopin/{{_id}}" style="float: right; margin-right: 4px" ><i><span class="bi bi-pin-fill"></span></i></a>
+                            {{else}}
+                                <a href="/notes/edit/pin/{{_id}}" style="float: right; margin-right: 4px"><i><span class="bi bi-pin"></span></i></a>
+                            {{/if}}
+
                     </h4>
                     <p>{{description}}</p>
+                    <div class="tag">
+                        <p>{{tag}}</p>
+                    </div>
                     <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
                         <input type="hidden" value="DELETE" name="_method">
                         <button class="btn btn-danger btn-block btn-sm" type="submit">Delete</button>
@@ -28,3 +77,38 @@
         <a href="/notes/add" class="btn btn-primary btn-circle"><i><span class="fas fa-plus"></span></i></a>
     </div>
 </div>
+
+
+
+
+<!--original-->
+<!--<div class="row">-->
+<!--    {{#each notes}}-->
+<!--        <div class="col-md-3">-->
+<!--            <div class="card m-2">-->
+<!--                <div class="card-body">-->
+<!--                    <h4 class="card-title d-flex justify-content-between align-items-center">-->
+<!--                        {{title}} <a href="/notes/edit/{{_id}}"><i><span class="fas fa-edit"></span></i></a>-->
+<!--                    </h4>-->
+<!--                    <p>{{description}}</p>-->
+<!--                    <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">-->
+<!--                        <input type="hidden" value="DELETE" name="_method">-->
+<!--                        <button class="btn btn-danger btn-block btn-sm" type="submit">Delete</button>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {{else}}-->
+<!--        <div class="card mx-auto">-->
+<!--            <div class="card-body">-->
+<!--                <p class="lead">There are no notes yet.</p>-->
+<!--                <a href="/notes/add" class ="btn btn-success btn-block">Create One!</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    {{/each}}-->
+<!--</div>-->
+<!--<div class="row p-2">-->
+<!--    <div class="col-md-1 ml-auto">-->
+<!--        <a href="/notes/add" class="btn btn-primary btn-circle"><i><span class="fas fa-plus"></span></i></a>-->
+<!--    </div>-->
+<!--</div>-->

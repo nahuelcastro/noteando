@@ -27,3 +27,9 @@
      position: sticky;
      top: 100%;
  }
+
+ .tag{
+     float: right;
+     color: blue;
+     font-family: monospace;
+ }

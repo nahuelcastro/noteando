@@ -1,3 +1,4 @@
+
 <div class="col-md-4 mx-auto">
     <div class="card">
         <div class="card-header">
@@ -6,10 +7,18 @@
         <div class="card-body">
             <form action="/notes/new-note" method="POST">
                 <div class="form-group">
-                    <input type="text" name="title" class="form-control" placeholder="Title" autofocus>
+                    <input type="text" name="title" class="form-control" placeholder="Title*" autofocus>
                 </div>
                 <div class="form-group">
-                    <textarea type="text" name="description" class="form-control" placeholder="Description"></textarea>
+                    <textarea type="text" name="description" class="form-control" placeholder="Description*"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="tag" class="form-control" placeholder="Tag (optional)">
+                </div>
+                <div class="form-group">
+                    <div class="pretty p-switch p-fill">
+                        <input type="checkbox" name="pinned" class="form-control" value="1"/> <div class="state"> <label>Pin Note</label> </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">
